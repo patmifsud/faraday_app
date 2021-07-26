@@ -1,0 +1,21 @@
+<container>
+<h3>My posts</h3>
+<% @current_user.feeds.each do |feed| %>
+   <ul>
+        <li>
+            <%= link_to feed.name, feed_path(feed.slug)%> 
+        </li>
+    </ul>
+<% end %>   
+</container>
+
+<container>
+<h3>All feeds</h3>
+<% @all_feeds.each do |feed| %>
+   <ul>
+        <li>
+            <%= link_to feed.name, feed_path(feed.slug)%> 
+        </li>
+    </ul>
+<% end %>   
+</container>

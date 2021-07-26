@@ -1,0 +1,47 @@
+
+
+
+p, h1, h3, h4, h5, a, sub, logo, small{
+    color: var(--mainCol);     
+    font-family: Public Sans, Helvetica, Arial, sans-serif;
+    line-height:125%;
+    max-width:var(--maxTextWidth);
+}
+
+
+
+h1{
+    font-size: var(--fonts1);
+    font-weight:800;
+}
+
+h3{
+    font-size: var(--fonts2);
+}
+
+h4, h5{
+    font-size: var(--fonts4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+h5{
+    color: var(--purple2);     
+}
+
+p{
+    font-size:var(--fonts5);
+}
+
+small{
+    font-size:var(--fonts5);
+    color: var(--purple2);     
+}
+
+a{
+    text-decoration: none;
+}
+
+*::selection{
+    background-color: var(--yellow1);
+}

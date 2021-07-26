@@ -1,0 +1,24 @@
+<dev>
+    <container>
+        <p> 🛠  Dev tools | Logged in as:
+
+        <% if @current_user.present? %>
+            <a class="dropdown"><%= @current_user.name %> </a> | 
+
+                <dropdown class="navbar-dropdown">
+                    <%= link_to "My feeds", all_feeds_path %>
+                    <%= link_to "Settings", "/" %>
+                    <%# <hr> %>
+                    <%= link_to "Logout", login_path, :method => 'delete', class: "red" %>
+                </dropdown>
+        <% end %>
+
+        <% if @current_user.blank? %>
+            <%= link_to "Browse", '/', class: "button light" %>
+            <%= link_to "Log in", login_path, class: "button light" %>
+            <%= link_to 'Sign up', new_user_path, class: "button primary" %>
+        <% end %>
+
+        </p>
+    </container>
+</dev>

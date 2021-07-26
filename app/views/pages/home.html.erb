@@ -1,0 +1,19 @@
+<container>
+    <h1>Faraday Dev</h1>
+    <small> V.0.01 </small>
+</container>
+
+
+<container>
+    <h5>Index:</h5>
+    <container>
+    <% @users.each do |user| %>
+        <container>
+            <p> <%= user.email %> <%= user.name %> </p>
+            <% user.feeds.each do |feed| %>
+                <%= link_to feed.name, feed_path(feed.slug)%> 
+            <% end %>   
+        </container>
+    <% end %>
+    </container>
+</container>

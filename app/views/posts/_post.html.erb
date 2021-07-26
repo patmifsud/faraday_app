@@ -1,0 +1,22 @@
+<post title="<%= post.title %>">
+    <content class="text">
+        <h3>
+            <%= post.content %>
+        </h3>
+    </content>
+    <handle>
+        <mesh>
+            <dot>
+                <%= render partial: "ui_components/read_state_dot", locals: { post: post } %>
+            </dot>
+            <posttitle>
+                <small>
+                    <%= post.title %>
+                </small>
+            </posttitle>
+            <iconcontainer>
+                <%= render partial: "ui_components/mbmenu" %>
+            </iconcontainer>
+        </mesh>
+    </handle>
+</post>

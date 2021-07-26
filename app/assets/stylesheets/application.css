@@ -1,0 +1,121 @@
+
+/* structure and setup */
+
+/* resets */
+*{box-sizing:border-box; margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
+div, container, nav, mesh {display: block; }
+
+/* variables */
+:root {
+    /* spacers */
+    --sp0:3px;
+    --sp1:5px;
+    --sp2:10px;
+    --sp3:15px;
+    --sp4:20px;
+    --sp5:25px;
+    --sp6:35px;
+    /* font size */
+    --fonts1: 30px;
+    --fonts3: 18px;
+    --fonts4: 16px;
+    --fonts5: 13px;
+    --maxTextWidth:800px;
+    /* color table */
+    --purple1: hsla(274, 17%, 28%, 1);
+    --purple2: hsla(275, 13%, 62%, 1);
+    --yellow1: hsla(47, 100%, 72%, 1);
+    --yellow2: hsla(47, 100%, 90%, 1);
+    --blue1: hsla(230, 34%, 71%, 1);
+    --blue2: hsla(230, 23%, 92%, 1);
+    --blue3: hsla(230, 42%, 98%, 1);
+    /* interface colors */
+    --mainCol: var(--purple1);
+    --bgCol: white;
+    --bgCol2: var(--blue3);
+    /*Misc*/
+    --borderRad:var(--sp3);
+  }
+
+/* ------------------------- */
+/* structure */
+container{
+    padding:var(--sp4) var(--sp5);
+    max-width: 1000px;
+    margin:0 auto;
+    width:100%;
+
+}
+
+nav{
+    position:fixed;
+    display: flex;
+    width:100%;
+    background: var(--bgCol);
+}
+
+feed{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--sp4);
+    background: var(--bgCol2);
+    padding: var(--sp2);
+    border-radius: var(--borderRad);
+    max-width: 1000px;
+    margin:0 auto;
+    width:100%;
+}
+
+    post{
+        border-radius: var(--borderRad);
+        background: var(--bgCol);
+        max-width: 800px;
+    }
+        content{
+            display: flex;
+            border-radius: var(--borderRad) var(--borderRad) 0 0;
+        }
+            content.text{
+                padding: var(--sp5) var(--sp5) var(--sp6) var(--sp5);
+                flex-direction: column;
+                justify-content: center;
+                background-color:var(--yellow2); 
+                background-image:url('/quotebg.png')
+            }
+
+        dot{
+            display: flex;
+            align-items: center;
+            margin:var(--sp4);
+        }
+        posttitle{
+            display: flex;
+            align-items: center;
+            flex-grow: 2;
+            overflow: hidden;
+            padding: var(--sp4) var(--sp4) var(--sp4) 0;
+        }
+        iconcontainer{
+            display: flex;
+            align-items: center;
+            padding: var(--sp2);
+        }
+            icon{
+                display: flex;
+                padding: var(--sp3) var(--sp2);
+                border-radius: var(--borderRad);
+                cursor: pointer;
+            }
+
+            icon:hover{
+                background: var(--bgCol2);
+            }
+
+
+main{
+    padding-top:85px;
+}
+
+
+
+

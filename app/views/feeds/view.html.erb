@@ -1,0 +1,15 @@
+<container>
+
+<% if @editor %>
+    <%= render partial: "header_editor", locals: { feed: @feed } %>
+<% else %>
+    <%= render partial: "header_viewer", locals: { feed: @feed } %>
+<%end %>
+
+</container>
+
+<feed>
+    <% @posts.each do |post| %>
+        <%= render partial: "posts/post", locals: { post: post } %>
+    <% end %>
+</feed>
