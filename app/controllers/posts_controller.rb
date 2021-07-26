@@ -10,12 +10,38 @@ class PostsController < ApplicationController
     end
   
     def create
+        # check if post is empty
+            # error - is empty
+            # don't redirect
+        
+        # check is allowed to post
+            # error - not allowed 
+            # don't redirect
+
+        #check if post is a url
+            #make it a text post
+            # don't redirect
+
+        #oembed time
+
+
+
+
+
+
+
+
         if post_params[:content] == "" 
             redirect_back fallback_location: root_path  
             return
         end
 
         @feed = Feed.find(post_params[:feed_id])
+
+        @hash = JSON.parse string
+
+
+
 
         if @current_user && @current_user.id == @feed.user_id
             @post = Post.new post_params
