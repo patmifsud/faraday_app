@@ -80,7 +80,7 @@ feed{
                 flex-direction: column;
                 justify-content: center;
                 background-color:var(--yellow2); 
-                background-image:url('/quotebg.png')
+                /* background-image:url('/quotebg.png') */
             }
 
         dot{

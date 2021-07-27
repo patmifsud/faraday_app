@@ -1,7 +1,7 @@
 <post title="<%= post.title %>">
     <content class="text">
         <h3>
-            <%= post.content %>
+            <%= raw(post.content) %>
         </h3>
     </content>
     <handle>
@@ -11,7 +11,7 @@
             </dot>
             <posttitle>
                 <small>
-                    <%= post.title %>
+                    <%= truncate(post.title, :length => 50) %>
                 </small>
             </posttitle>
             <iconcontainer>

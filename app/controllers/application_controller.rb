@@ -1,6 +1,26 @@
 class ApplicationController < ActionController::Base
     before_action :fetch_user
   
+
+    
+
+
+
+
+
+
+    def url?(string)
+        uri = URI.parse(string)
+        %w( http https ).include?(uri.scheme)
+      rescue URI::BadURIError
+        false
+      rescue URI::InvalidURIError
+        false
+    end
+
+
+
+
     private
     def fetch_user
       @current_user = User.find_by :id => session[:user_id] if session[:user_id].present?

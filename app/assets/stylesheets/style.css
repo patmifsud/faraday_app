@@ -27,6 +27,15 @@ dropdown.open{
     display: inline;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+
 
 dev{
     color:white!important; background: hsla(274, 17%, 28%, 1);
@@ -63,3 +72,5 @@ mesh{
 .offset-icons icon{
     margin-bottom: -5px;
 }
+
+

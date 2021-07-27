@@ -1,19 +1,24 @@
-<h1>Edit user</h1>
 
-<% if @current_user present? %>
+<container>
+    <h1>Edit user</h1>
+</container>
 
-    <% if @current_user.errors.any? %>
-    <ol>
-        <% @current_user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+<container>
+    <% if @current_user present? %>
+
+        <% if @current_user.errors.any? %>
+        <ol>
+            <% @current_user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+        </ol>
         <% end %>
-    </ol>
-    <% end %>
 
-    <%= form_for @current_user do |f| %>
-        <%= f.label :email %>
-        <%= f.email_field :email, :required => true %>
-    <%= f.submit "Save" %>
-    <% end %>
+        <%= form_for @current_user do |f| %>
+            <%= f.label :email %>
+            <%= f.email_field :email, :required => true %>
+        <%= f.submit "Save" %>
+        <% end %>
 
-<% end %>
+    <% end %>
+</container>
