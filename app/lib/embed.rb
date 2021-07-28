@@ -1,7 +1,9 @@
 
-class Embed
 
-    include HTTParty
+
+class Embed
+  include HTTParty
+
 
     attr_accessor :url 
 
@@ -38,5 +40,5 @@ class Embed
       @result['html']
     end
 
-  end
-  
+end
+

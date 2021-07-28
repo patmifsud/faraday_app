@@ -83,12 +83,11 @@ button, input[type=submit], .button{
         color: var( --blue3);
     }
 
-    /* form submit buttons should be a little larger */
-    /* form input[type=submit]{
+    form input[type=submit]{
         font-size: var( --fonts2);
         padding: var( --sp3) var(--sp6);
         margin: var( --sp3) 0;
-    } */
+    }
 
         .flex-center input, .flex-center .button{
             margin-bottom:0;
@@ -180,5 +179,8 @@ mesh{
     margin-bottom: -5px;
 }
 
-
-
+@media only screen and (max-width: 570px) {
+    post {
+      width: 100%;
+    }
+  }
