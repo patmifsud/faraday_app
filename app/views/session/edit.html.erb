@@ -1,9 +1,7 @@
 
 <container>
     <h1>Edit user</h1>
-</container>
 
-<container>
     <% if @current_user present? %>
 
         <% if @current_user.errors.any? %>
@@ -14,10 +12,11 @@
         </ol>
         <% end %>
 
-        <%= form_for @current_user do |f| %>
+        <%= form_for @current_user  do |f| %>
             <%= f.label :email %>
             <%= f.email_field :email, :required => true %>
-        <%= f.submit "Save" %>
+
+            <%= f.submit "Save" %>
         <% end %>
 
     <% end %>

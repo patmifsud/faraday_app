@@ -17,6 +17,7 @@ div, container, nav, mesh {display: block; }
     --sp6:35px;
     /* font size */
     --fonts1: 30px;
+    --fonts2: 20px;
     --fonts3: 18px;
     --fonts4: 16px;
     --fonts5: 13px;
@@ -69,20 +70,14 @@ feed{
     post{
         border-radius: var(--borderRad);
         background: var(--bgCol);
-        max-width: 800px;
+        max-width: 100%;
+        width: fit-content;
+        overflow: hidden;
     }
         content{
             display: flex;
-            border-radius: var(--borderRad) var(--borderRad) 0 0;
+            overflow:scroll;
         }
-            content.text{
-                padding: var(--sp5) var(--sp5) var(--sp6) var(--sp5);
-                flex-direction: column;
-                justify-content: center;
-                background-color:var(--yellow2); 
-                /* background-image:url('/quotebg.png') */
-            }
-
         dot{
             display: flex;
             align-items: center;

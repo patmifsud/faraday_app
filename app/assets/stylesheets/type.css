@@ -1,7 +1,7 @@
 
 
 
-p, h1, h3, h4, h5, a, sub, logo, small, label{
+p, h1, h3, h4, h5, a, sub, logo, small, label, content{
     color: var(--mainCol);     
     font-family: Public Sans, Helvetica, Arial, sans-serif;
     line-height:125%;
@@ -44,4 +44,8 @@ a{
 
 *::selection{
     background-color: var(--yellow1);
+}
+
+*::placeholder{
+    color: var(--purple2);     
 }

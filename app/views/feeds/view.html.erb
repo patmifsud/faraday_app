@@ -9,7 +9,7 @@
 </container>
 
 <feed>
-    <% @posts.each do |post| %>
+    <% @posts.sort_by { rand }.each do |post| %>
         <%= render partial: "posts/post", locals: { post: post } %>
     <% end %>
 </feed>

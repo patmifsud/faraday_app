@@ -26,8 +26,11 @@ ActiveRecord::Schema.define(version: 2021_07_24_044244) do
   create_table "posts", force: :cascade do |t|
     t.text "title"
     t.integer "feed_id"
-    t.text "source"
+    t.text "post_type"
     t.text "content"
+    t.text "provider_name"
+    t.text "author_name"
+    t.text "author_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

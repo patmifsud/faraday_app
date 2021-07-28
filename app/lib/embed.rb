@@ -17,7 +17,7 @@ class Embed
       end
     end
 
-    def website
+    def provider_name
       @result['provider_name']
     end
 

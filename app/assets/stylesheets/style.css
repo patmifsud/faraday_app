@@ -10,13 +10,88 @@ logo{
     background: var(--yellow2);
     justify-content: center;
     align-items: center;
+    
 }
 
 logo:hover{
     background: var(--yellow1);
 }
 
+post[type=embed]{
+    
+}
+.twitter-tweet{
+margin-top:0;
+margin-bottom:0;
 
+}
+
+iframe{
+    width:100%;
+    min-height:calc(200px + 5vw);
+}
+
+
+post[type=text] content{
+    border-radius: var(--borderRad) var(--borderRad) 0 0;
+    padding: var(--sp5) var(--sp6) var(--sp6) var(--sp5);
+    flex-direction: column;
+    justify-content: center;
+    width:100%;
+    max-width:550px;
+    background-color:var(--yellow2); 
+    background-image:url('quotebg.png');
+    font-size: var(--fonts3);
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: var(--sp3) 0 0 0;
+}
+    input[type=text], input[type=password], input[type=email]{
+        background: linear-gradient(180deg, #F8F8FC 0%, #F8F8FC 95.31%, #C1B3CC 97.4%);
+        border-radius: 4px;
+        width: 100%;
+        max-width:800px;
+        padding: var(--sp3) var(--sp2);
+        margin: 0 0 var(--sp4) 0;
+    }
+
+    label{
+        padding: var(--sp2) 0;
+        color: var(--purple2);
+    }
+
+button, input[type=submit]{
+    background: var(--purple1);
+    font-size: var( --fonts2);
+    border-radius: 4px;
+    padding: var( --sp3) var(--sp6);
+    margin: var( --sp3) 0;
+    color: var( --blue3);
+    cursor: pointer;
+}
+        .flex-center input{
+            margin-bottom:0;
+            margin-top:0;
+        }
+
+    .button.submit{
+        align-self: normal;
+        font-size: var(--fonts2);
+        padding: var(--sp1) var(--sp4);
+        margin:0;
+    }
+
+    button, input[type=submit]:hover{
+        background: var(--yellow1);
+        color: var(--purple1);
+    }
 
 dropdown{
     /* display: none; */
@@ -27,11 +102,8 @@ dropdown.open{
     display: inline;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+
+
 
 
 
@@ -57,6 +129,10 @@ mesh{
     display: flex;
     align-items: center;
     width: 100%;
+}
+
+.flex-row{
+    flex-direction: row;
 }
 
 .gap2{
