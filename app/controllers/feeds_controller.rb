@@ -3,6 +3,10 @@ class FeedsController < ApplicationController
   end
 
   def create
+    @feed = Feed.create feed_params
+    @feed.user_id = @current_user.id
+    @feed.save
+    redirect_to feed_path(@feed.slug)
   end
 
   def browse
@@ -24,4 +28,9 @@ class FeedsController < ApplicationController
       @editor = true
     end
   end
+
+  private
+    def feed_params
+      params.require(:feed).permit(:name, :user_id)
+    end
 end

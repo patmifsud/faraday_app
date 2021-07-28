@@ -8,8 +8,11 @@
 
 </container>
 
+
 <feed>
-    <% @posts.sort_by { rand }.each do |post| %>
-        <%= render partial: "posts/post", locals: { post: post } %>
-    <% end %>
+    <mesh class="feed-inner gap4">
+        <% @posts.sort_by { rand }.each do |post| %>
+            <%= render partial: "posts/post", locals: { post: post } %>
+        <% end %>
+    </mesh>
 </feed>

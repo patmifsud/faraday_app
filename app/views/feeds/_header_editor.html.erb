@@ -5,9 +5,9 @@
 </mesh>
 
 <%= form_for Post.new do |f| %>
-    <mesh title="New post box" class="flex-center gap4">
+    <mesh title="New post box" class="flex-center hgap2">
         <%= f.text_field :content, placeholder: "Paste a link to add to your feed" %>
         <%= f.hidden_field :feed_id, value: @feed.id %>
-        <%= f.submit "+", class: "button submit", :disable_with => '⏳' %>
+        <%= f.submit "+", class: "button primary submit", :disable_with => '⏳' %>
     </mesh>
 <% end %>

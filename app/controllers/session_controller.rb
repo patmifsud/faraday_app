@@ -14,7 +14,8 @@ class SessionController < ApplicationController
     end
   end
 
-
+  def edit
+  end
 
   def destroy
     session[:user_id] = nil

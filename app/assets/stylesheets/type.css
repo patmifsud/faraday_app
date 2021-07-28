@@ -49,3 +49,8 @@ a{
 *::placeholder{
     color: var(--purple2);     
 }
+
+
+.bold{
+    font-weight: 800;
+}

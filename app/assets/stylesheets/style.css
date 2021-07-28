@@ -17,14 +17,12 @@ logo:hover{
     background: var(--yellow1);
 }
 
-post[type=embed]{
-    
-}
-.twitter-tweet{
-margin-top:0;
-margin-bottom:0;
-
-}
+    post[type=embed]{        
+    }
+        .twitter-tweet{
+            margin-top:0!important;
+            margin-bottom:0!important;
+        }
 
 iframe{
     width:100%;
@@ -47,6 +45,9 @@ post[type=text] content{
 }
 
 
+
+
+
 form{
     display: flex;
     flex-direction: column;
@@ -67,16 +68,29 @@ form{
         color: var(--purple2);
     }
 
-button, input[type=submit]{
-    background: var(--purple1);
-    font-size: var( --fonts2);
+button, input[type=submit], .button{
+    display: inline-block;
+    background: var(--bgCol2);
+    color: var( --mainCol);
+    font-size: var( --fonts4);
     border-radius: 4px;
-    padding: var( --sp3) var(--sp6);
-    margin: var( --sp3) 0;
-    color: var( --blue3);
+    padding: var( --sp2) var(--sp4);
     cursor: pointer;
+    margin-right:var( --sp2);
 }
-        .flex-center input{
+        button.primary, input[type=submit].primary, .button.primary{
+        background: var(--purple1);
+        color: var( --blue3);
+    }
+
+    /* form submit buttons should be a little larger */
+    /* form input[type=submit]{
+        font-size: var( --fonts2);
+        padding: var( --sp3) var(--sp6);
+        margin: var( --sp3) 0;
+    } */
+
+        .flex-center input, .flex-center .button{
             margin-bottom:0;
             margin-top:0;
         }
@@ -88,9 +102,13 @@ button, input[type=submit]{
         margin:0;
     }
 
-    button, input[type=submit]:hover{
+    button:hover, input[type=submit]:hover, .button:hover{
         background: var(--yellow1);
         color: var(--purple1);
+    }
+
+    button:active, input[type=submit]:active, .button:active{
+        opacity:0.8;
     }
 
 dropdown{
@@ -129,24 +147,38 @@ mesh{
     display: flex;
     align-items: center;
     width: 100%;
+    overflow:scroll;
 }
 
 .flex-row{
     flex-direction: row;
 }
+.space-between{
+    justify-content: space-between;
+}
 
-.gap2{
-    gap:var(--sp2);
+.gap2 > *:not(:last-child){
+    margin-bottom:var(--sp2);
+    /* gap:var(--sp2); */
 }
-.gap3{
-    gap:var(--sp3);
+.gap3 > *:not(:last-child){
+    margin-bottom:var(--sp3);
+    /* gap:var(--sp3); */
 }
-.gap4{
-    gap:var(--sp4);
+.gap4 > *:not(:last-child){
+    margin-bottom:var(--sp4);
+    /* gap:var(--sp4); */
 }
+
+.hgap2 > *:not(:last-child){
+    margin-right:var(--sp2);
+    /* gap:var(--sp2); */
+}
+
 
 .offset-icons icon{
     margin-bottom: -5px;
 }
+
 
 

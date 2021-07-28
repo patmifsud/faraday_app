@@ -1,5 +1,21 @@
 <nav aria-label="main navigation">
-    <container>
+    <container >
+        <mesh class="space-between">
         <%= render partial: "layouts/logo" %>
+
+        <% if @current_user.present? %>
+            <div>
+                <%= link_to ("+ &nbsp; Feed".html_safe), new_feed_path, class: "button primary" %>
+                <%# link_to @current_user.name, session_edit_path, class: "button light" %> 
+                <a class="button bold"><%= "&nbsp; &nbsp;".html_safe + @current_user.name %></a>
+            </div>
+        <% else %>
+            <div>
+                <%= link_to "Log in", login_path, class: "button" %>
+                <%= link_to 'Sign up', new_user_path, class: "button primary" %>
+            </div>
+        <% end %>
+        </mesh>
     </container>
 </nav>
+

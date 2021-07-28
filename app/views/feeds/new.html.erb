@@ -1,2 +1,13 @@
-<h1>Feeds#new</h1>
-<p>Find me in app/views/feeds/new.html.erb</p>
+<container>
+<h1>Create a new feed</h1>
+
+<%= form_for Feed.new do |f| %>
+        <%= label_tag "Name your feed:"%>
+        <%= f.text_field :name, placeholder: "Photography tips", :required => true %>
+
+        <% # label_tag :feed_posts, value: "Optional - Add some content into your feed:"%>
+        <% # text_area :feed_posts, placeholder: "Paste in links here. You can seperate them with a comma or a space." %>
+
+        <%= f.submit "Create Feed", class: "button", :disable_with => '⏳' %>
+  <% end %>
+</container>
