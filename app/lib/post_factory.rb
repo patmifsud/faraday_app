@@ -50,7 +50,7 @@ module Post_factory
         ogp = Ogpr.fetch(content) rescue nil
 
         # render some open graph stuff in the post depending on what is available
-        if ogp.exist? 
+        if ogp
             link_inner = ogp.meta["og:description"].truncate(35) if ogp.meta["og:description"]
             link_inner = ogp.meta["og:title"].truncate(35) if ogp.meta["og:title"]  #title is better if available
             link_inner += (" - " + ogp.meta["og:site_name"]) if ogp.meta["og:site_name"]
