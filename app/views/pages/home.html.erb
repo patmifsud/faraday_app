@@ -1,11 +1,11 @@
-<container>
+ <container> <inner>
     <h1>Faraday Dev</h1>
     <small> V.0.01 | Better homepage coming soon.</small>
-</container>
+</inner></container> 
 
 
 <% if @current_user.present? %>
-    <container>
+     <container> <inner>
         <h5>My feeds:</h5>
             <div style="margin:30px 0;">
                 <mesh>
@@ -17,10 +17,10 @@
                     <%= link_to ("+ &nbsp; Feed".html_safe), new_feed_path, class: "button primary" %>
                 </div>
             </div>
-    </container>
+    </inner></container> 
 <% end %>   
 
-<container>
+ <container> <inner>
     <h5>All feeds:</h5>
         <% @users.each do |user| %>
             <div style="margin:30px 0;">
@@ -34,5 +34,5 @@
                 </mesh>
             </div>
         <% end %>
-</container>
+</inner></container> 
 

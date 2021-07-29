@@ -1,7 +1,7 @@
 
 
 
-<container>
+ <container> <inner>
 <h3>My feeds</h3>
 <% @current_user.feeds.each do |feed| %>
    <ul>
@@ -10,9 +10,9 @@
         </li>
     </ul>
 <% end %>   
-</container>
+</inner></container> 
 
-<container>
+ <container> <inner>
 <h3>All feeds</h3>
 <% @all_feeds.each do |feed| %>
    <ul>

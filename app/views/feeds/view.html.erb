@@ -1,4 +1,4 @@
-<container>
+ <container> <inner>
 
 <% if @editor %>
     <%= render partial: "header_editor", locals: { feed: @feed } %>
@@ -6,7 +6,7 @@
     <%= render partial: "header_viewer", locals: { feed: @feed } %>
 <%end %>
 
-</container>
+</inner></container> 
 
 
 <feed>

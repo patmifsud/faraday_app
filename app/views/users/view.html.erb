@@ -1,4 +1,4 @@
-<container>
+ <container> <inner>
 <h1><%= @user.name %>'s feeds:</h1>
 
     <% if @user.feeds.any? %>
@@ -14,5 +14,5 @@
         <%= link_to ("Create a new feed".html_safe), new_feed_path, class: "button primary" %>
     <% end %>
 
-</container>
+</inner></container> 
 
