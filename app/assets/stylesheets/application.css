@@ -4,7 +4,7 @@
 /* resets */
 *{box-sizing:border-box; margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
 div, container, nav, mesh {display: block; }
-body, html{ min-height: 100vh;}
+body, html{ min-height: 100vh;  background: var(--bgCol2); }
 
 /* variables */
 :root {
@@ -46,6 +46,7 @@ container{
     max-width: 1000px;
     margin:0 auto;
     width:100%;
+    background-color: var(--bgCol);
 
 }
 
@@ -61,10 +62,12 @@ feed{
     width:100%;
     display:block;
     height:100%;
+    animation: fadein 3s;
+
 }
     .feed-inner{
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         max-width: 1000px;
         margin:0 auto;
         padding: var(--sp3) var(--sp2);
@@ -79,6 +82,7 @@ feed{
         width: fit-content;
     }
         content{
+            border-radius: var(--borderRad) var(--borderRad) 0 0;
             overflow: hidden;
             display: flex;
             overflow:scroll;

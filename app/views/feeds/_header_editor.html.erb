@@ -16,6 +16,6 @@
     <mesh title="New post box" class="flex-center hgap2">
         <%= f.text_field :content, placeholder: "Paste a link to add to your feed" %>
         <%= f.hidden_field :feed_id, value: @feed.id %>
-        <%= f.submit "+", class: "button primary submit", :disable_with => '⏳' %>
+        <%= f.submit "+", class: "button primary submit mono", data: { disable_with: "↻" } %>
     </mesh>
 <% end %>

@@ -22,15 +22,27 @@ logo:hover{
 
 
 post[type=embed]{}
+
     .twitter-tweet{
         margin-top:0!important;
         margin-bottom:0!important;
     }
 
+    [provider=YouTube]{
+      width: 100%;
+      max-width: 550px;
+    }
+      [provider=YouTube] iframe{
+        min-height:calc(200px + 8vw);
+      }
+
+
     iframe{
         width:100%;
-        min-height:calc(200px + 5vw);
+        min-height:calc(200px + 4vw);
+
     }
+
 
 post[type=text] content{
     padding: var(--sp5) var(--sp6) var(--sp6) var(--sp5);
@@ -71,8 +83,18 @@ post[type=image] content{
     height: auto;
     min-height: var(--sp6);
 }
+  img{
+    width: 100%;
+  }
 
+small a{
+  border-bottom: 2px solid var(--yellow2);
+  padding-bottom: var( --sp1);
+}
 
+small a:hover{
+background: var(--yellow2);
+}
 
 
 
@@ -189,15 +211,15 @@ mesh{
     justify-content: space-between;
 }
 
-.gap2 > *:not(:last-child){
+.gap2 > *:not(:first-child){
     margin-bottom:var(--sp2);
     /* gap:var(--sp2); */
 }
-.gap3 > *:not(:last-child){
+.gap3 > *:not(:first-child){
     margin-bottom:var(--sp3);
     /* gap:var(--sp3); */
 }
-.gap4 > *:not(:last-child){
+.gap4 > *:not(:first-child){
     margin-bottom:var(--sp4);
     /* gap:var(--sp4); */
 }
@@ -227,6 +249,13 @@ mesh{
 
 
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
 
 
 
@@ -239,17 +268,17 @@ mesh{
     display: inline-block;
     overflow: visible;
     position: relative;
-    text-align: center;
-    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smoothing: antialiased;
   }
-  .drop.is-disabled {
-    cursor: not-allowed;
-  }
-  
 
+  .drop small{
+    padding: var(--sp3);
+    display: block;
+    cursor: auto;
+
+  }
 
   /**********************
    * Drop Content Element
@@ -370,7 +399,7 @@ mesh{
    * Drop List Button Element
    **************************/
   .drop-list__btn {
-    border-bottom: 1px solid #eeeeee;
+    border-top: 1px solid #eeeeee;
     padding: var(--sp3) var(--sp4) var(--sp4) var(--sp4);
     color: var( --purple1);
     font-size: var( --fonts3);

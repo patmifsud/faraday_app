@@ -11,6 +11,7 @@
                     <a class="button bold"><%= @current_user.name + " ▾" %> </a>
                     <div class="drop__content -transition-slide-in">
                         <div class="drop-list -size-large -position-left  ">
+                            <small><%= @current_user.email %> </small>
                             <%= link_to "My feeds", "/u/#{@current_user.id}", class: "drop-list__btn" %>
                             <%= link_to "Logout", login_path, :method => 'delete', class: "drop-list__btn red" %>
                         </div>

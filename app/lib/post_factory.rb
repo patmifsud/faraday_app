@@ -1,8 +1,10 @@
 module Post_factory
+
     # Takes in a string or url and outputs a Post object 
 
     # Make a new post obj from the url the user entered as :content
     def self.mint_embed_post content, feed
+
         @embed = Embed.new(content)
         # Does noembed know how to embed this url?
         if @embed.success
@@ -14,7 +16,7 @@ module Post_factory
             @post.provider_name = @embed.provider_name
             @post.author_name = @embed.author_name
             @post.author_url = @embed.author_url
-            @post.title = "#{@embed.title} via #{@embed.provider_name}"
+            @post.title = "#{@embed.title.truncate(35)} via #{@embed.provider_name.truncate(35)}"
             @post.feed_id = feed.id
             @post.save
         elsif image?(content)
@@ -42,22 +44,27 @@ module Post_factory
     def self.mint_link_post content, feed
         require "ogpr"
         # ^ Getting the Open Graph Desc for the link text 
-        link_inner = content
+        link_inner = content.truncate(35)        
+
         # https://github.com/hirakiuc/ogpr
         ogp = Ogpr.fetch(content) rescue nil
+
         # render some open graph stuff in the post depending on what is available
         if ogp.exist? 
-            link_inner = ogp.meta["og:description"] if ogp.meta["og:description"]
-            link_inner = ogp.meta["og:title"] if ogp.meta["og:title"]  #title is better if available
+            link_inner = ogp.meta["og:description"].truncate(35) if ogp.meta["og:description"]
+            link_inner = ogp.meta["og:title"].truncate(35) if ogp.meta["og:title"]  #title is better if available
             link_inner += (" - " + ogp.meta["og:site_name"]) if ogp.meta["og:site_name"]
-            link_inner += (" <img src='#{ogp.meta["og:image"]}'> ") if ogp.meta["og:image"]
+            if ogp.meta["og:image"]
+                mint_link_image_post(content, feed, ogp.meta["og:image"], link_inner)
+                return
+            end
         end
 
         @post = Post.new
         #--------------------------
         @post.content = (("<a href='#{content}'> #{link_inner} </a> ").html_safe)
         @post.post_type = 'link'
-        @post.title = "Link"
+        @post.title = (("<a href='#{content}'> Link: #{link_inner} </a> ").html_safe)
         @post.provider_name = "interal"
         @post.feed_id = feed.id
         @post.save
@@ -70,6 +77,18 @@ module Post_factory
         @post.post_type = 'image'
         @post.content =  "<img src='#{content}'>"
         @post.title = "Image"
+        @post.provider_name = "interal"
+        @post.feed_id = feed.id
+        @post.save
+    end
+
+    # image - but with a link 
+    def self.mint_link_image_post content, feed, imgsrc, og_str
+        @post = Post.new 
+        #--------------------------
+        @post.post_type = 'image'
+        @post.content =  "<img src='#{imgsrc}'>"
+        @post.title = (("<a href='#{content}'> Link: #{og_str.html_safe} </a> ").html_safe)
         @post.provider_name = "interal"
         @post.feed_id = feed.id
         @post.save
