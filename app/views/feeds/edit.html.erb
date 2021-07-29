@@ -1,2 +1,11 @@
-<h1>Feeds#edit</h1>
-<p>Find me in app/views/feeds/edit.html.erb</p>
+<container>
+  <h1>Edit feed</h1>
+
+  <%= form_for @feed, url: update_feed_path, method: :post do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, value: @feed.name %>
+
+    <%= f.submit "Save" %>
+
+  <% end %>
+</container>

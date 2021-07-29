@@ -9,11 +9,20 @@
             </dot>
             <posttitle>
                 <small>
-                    <%= truncate(post.title, :length => 50) %>
+                    <%= raw(post.title) %>
                 </small>
             </posttitle>
             <iconcontainer>
-                <%= render partial: "ui_components/mbmenu" %>
+                <% if @current_user.present? && post.feed.user_id == @current_user.id %>
+                    <div class="drop drop--up">
+                        <a> <%= render partial: "ui_components/mbmenu" %> </a>
+                        <div class="drop__content -transition-slide-in">
+                            <div class="drop-list -size-large -position-left -border-rounded">
+                                <%= link_to 'Remove post', "/posts/#{post.id}", :method => :delete, class: "drop-list__btn" %>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
             </iconcontainer>
         </mesh>
     </handle>

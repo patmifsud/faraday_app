@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     user = User.find_by :email => params[:email]
     if user.present? and user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to user_home_path(user.id)
     else
       # try again message here
       redirect_to login_path # GET /login

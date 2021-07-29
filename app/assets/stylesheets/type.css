@@ -54,3 +54,7 @@ a{
 .bold{
     font-weight: 800;
 }
+
+.mono{
+    font-family: monospace;
+}

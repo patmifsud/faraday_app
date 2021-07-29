@@ -1,13 +1,21 @@
 
 <mesh title="heading" class="flex-center offset-icons gap2">
     <h1><%= @feed.name %></h1>
-    <%= render partial: "ui_components/mbmenu" %>
+        <div class="drop drop--down">
+            <a> <%= render partial: "ui_components/mbmenu" %> </a>
+            <div class="drop__content -transition-slide-in">
+                <div class="drop-list -size-large -position-left -border-rounded">
+                    <%= link_to 'Edit feed', edit_feed_path, class: "drop-list__btn" %>
+                    <%= link_to 'Delete feed', delete_feed_path, :method => :delete, data: { confirm: 'Are you sure you want to delete this feed?' }, class: "drop-list__btn" %>
+                </div>
+            </div>
+        </div>
 </mesh>
 
 <%= form_for Post.new do |f| %>
     <mesh title="New post box" class="flex-center hgap2">
         <%= f.text_field :content, placeholder: "Paste a link to add to your feed" %>
         <%= f.hidden_field :feed_id, value: @feed.id %>
-        <%= f.submit "+", class: "button primary submit", :disable_with => '⏳' %>
+        <%= f.submit "+", class: "button primary submit mono", data: { disable_with: "↻" } %>
     </mesh>
 <% end %>

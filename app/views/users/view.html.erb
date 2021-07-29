@@ -1,2 +1,18 @@
-<h1>Users#view</h1>
-<p>Find me in app/views/users/view.html.erb</p>
+<container>
+<h1><%= @user.name %>'s feeds:</h1>
+
+    <% if @user.feeds.any? %>
+        <% @user.feeds.each do |feed| %>
+            <%= render partial: "ui_components/feed_card", locals: { feed: feed } %>
+        <% end %>   
+    <% else %>
+        <card>
+            <h3> Looks like there are no feeds here yet.... </h3>
+        </card>
+    <% end %>
+    <% if @current_user.present? && @user.id == @current_user.id %>
+        <%= link_to ("Create a new feed".html_safe), new_feed_path, class: "button primary" %>
+    <% end %>
+
+</container>
+

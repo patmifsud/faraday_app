@@ -6,12 +6,20 @@ class PostsController < ApplicationController
     def edit
     end
   
-    def delete
+    def destroy
+        post = Post.find params[:id]
+        if post.feed.user_id == @current_user.id
+            post.destroy
+            redirect_back fallback_location: root_path  
+            return
+        end
+        redirect_back fallback_location: root_path  
     end
   
+
     def create
         @feed = Feed.find(post_params[:feed_id])
-        
+
         # check if post is empty
         if post_params[:content].blank? 
             redirect_back fallback_location: root_path  
@@ -25,15 +33,13 @@ class PostsController < ApplicationController
             return 
         end
 
-
-        if !url?(post_params[:content])
-            helpers.mint_text_post(post_params, @feed) 
-        else 
-            helpers.mint_embed_post(post_params, @feed)
+        #Is the post plain text or a URL? 
+        if !url?(post_params[:content]) 
+             Post_factory.mint_text_post(post_params[:content], @feed) 
+        else Post_factory.mint_embed_post(post_params[:content], @feed)
         end
 
         redirect_back fallback_location: root_path  
-        
     end
 
     private

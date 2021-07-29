@@ -14,9 +14,21 @@ class FeedsController < ApplicationController
   end
 
   def edit
+    @feed = Feed.find_by_slug(params[:slug])
   end
 
-  def delete
+  def update
+    @feed = Feed.find_by_slug(params[:slug])
+      if @feed.user_id == @current_user.id
+        @feed.update feed_params
+      end
+      redirect_to user_home_path(@current_user)
+  end
+
+  def destroy
+    feed = Feed.find_by_slug(params[:slug])
+    feed.destroy if feed.user_id == @current_user.id
+    redirect_to user_home_path(@current_user)
   end
 
   def view
