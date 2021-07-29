@@ -30,7 +30,7 @@ module FaradayApp
 
     # Don't generate system test files.
     # config/application.rb
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
     config.generators.system_tests = nil
     config.assets.precompile += %w[ style.css type.css ]
   end
