@@ -3,8 +3,6 @@
 
 class Embed
   include HTTParty
-
-
     attr_accessor :url 
 
     def initialize(url='https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Blank-document-broken.svg/1024px-Blank-document-broken.svg.png')  

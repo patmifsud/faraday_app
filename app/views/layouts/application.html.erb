@@ -20,9 +20,6 @@
       <%= yield %>
     </main>
 
-    <% if !Rails.env.production? %>
-          <%= render partial: "layouts/dev" %>
-    <% end %>
   </body>
 
 </html>

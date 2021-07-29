@@ -2,15 +2,23 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
   get 'session/new'
 
-  resources :users, :only => [:new, :create, :index]
   get '/f/:slug' => 'feeds#view', :as => :feed
-  get '/feeds/' => 'feeds#browse', :as => :all_feeds
+  delete '/f/:slug' => 'feeds#destroy', :as => :delete_feed
+  get '/feeds/edit/:slug' => 'feeds#edit', :as => :edit_feed
+  post '/feeds/edit/:slug' => 'feeds#update', :as => :update_feed
+
 
   resources :feeds, :only => [:new, :create]
-  resources :posts, :only => [:create]
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
+
+  resources :posts, :only => [:create]
+  get '/posts/:id' => 'posts#view'
+  delete '/posts/:id' => 'posts#destroy'
+
+  resources :users, :only => [:new, :create]
+  get '/u/:id' => 'users#view', :as => :user_home
 
 end

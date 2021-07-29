@@ -4,6 +4,7 @@
 /* resets */
 *{box-sizing:border-box; margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;}
 div, container, nav, mesh {display: block; }
+body, html{ min-height: 100vh;}
 
 /* variables */
 :root {
@@ -59,6 +60,7 @@ feed{
     background: var(--bgCol2);
     width:100%;
     display:block;
+    height:100%;
 }
     .feed-inner{
         display: flex;
@@ -75,9 +77,9 @@ feed{
         background: var(--bgCol);
         max-width: 100%;
         width: fit-content;
-        overflow: hidden;
     }
         content{
+            overflow: hidden;
             display: flex;
             overflow:scroll;
         }
@@ -112,6 +114,7 @@ feed{
 
 main{
     padding-top:85px;
+    height:100%;
 }
 
 
