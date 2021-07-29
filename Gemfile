@@ -23,6 +23,9 @@ gem 'httparty'
 # for parsing opengraph
 gem 'ogpr'
 
+# for youtube API - used for subscriptions
+gem 'yt', '~> 0.32.0'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

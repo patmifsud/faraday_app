@@ -2,6 +2,8 @@ class Feed < ApplicationRecord
     validates :slug, uniqueness: true
     belongs_to :user, :optional => true
     has_many :posts
+    has_many :subscriptions
+
 
     after_create :update_slug
     before_update :assign_slug
