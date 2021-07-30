@@ -79,7 +79,7 @@ u2.feeds << f3
     Post_factory.mint_embed_post("https://www.youtube.com/watch?v=Mus_vwhTCq0", f3)
     Post_factory.mint_embed_post("https://www.youtube.com/watch?v=g2nMKzhkvxw", f3)
     Post_factory.mint_embed_post("https://www.youtube.com/watch?v=UjhX2sVf0eg", f3)
-    Post_factory.mint_embed_post("https://cdn.tutsplus.com/net/uploads/legacy/516_code/preview.jpg", f3)
+    Post_factory.mint_image_post("https://cdn.tutsplus.com/net/uploads/legacy/516_code/preview.jpg", f3)
 
 puts "Seeded #{ f3.posts.count } posts in #{ f3.name } feed - #{ f3.user.name }"
 
