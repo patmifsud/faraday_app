@@ -2,10 +2,6 @@ class Feed < ApplicationRecord
     validates :slug, uniqueness: true
     belongs_to :user, :optional => true
     has_many :posts
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
     after_create :update_slug
     before_update :assign_slug

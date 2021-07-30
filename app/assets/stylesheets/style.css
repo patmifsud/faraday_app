@@ -19,8 +19,6 @@ logo:hover{
     background: var(--yellow1);
 }
 
-<<<<<<< Updated upstream
-=======
 section.marketing-section{
   padding: var(--sp8) var(--sp4) var(--sp7) var(--sp4);
   max-width: 450px;
@@ -40,8 +38,6 @@ section.marketing-section{
   display: none;
   background-image: url("illustration.png");
 }
->>>>>>> Stashed changes
-
 
 post[type=embed]{}
 
@@ -251,14 +247,9 @@ mesh{
     /* gap:var(--sp2); */
 }
 
-
-<<<<<<< Updated upstream
-
-=======
 .yellow-background{
   background: var(--yellow2);
 }
->>>>>>> Stashed changes
 
 .blue-background{
   background: var(--blue2);

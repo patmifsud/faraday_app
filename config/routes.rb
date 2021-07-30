@@ -21,8 +21,4 @@ Rails.application.routes.draw do
   resources :users, :only => [:new, :create]
   get '/u/:id' => 'users#view', :as => :user_home
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 end
