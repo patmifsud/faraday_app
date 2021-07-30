@@ -1,10 +1,10 @@
 
 
 
-p, h1, h3, h4, h5, a, sub, logo, small, label, content{
+p, h1, h2, h3, h4, h5, a, sub, logo, small, label, content{
     color: var(--mainCol);     
     font-family: Public Sans, Helvetica, Arial, sans-serif;
-    line-height:125%;
+    line-height:130%;
     max-width:var(--maxTextWidth);
 }
 
@@ -13,6 +13,11 @@ p, h1, h3, h4, h5, a, sub, logo, small, label, content{
 h1{
     font-size: var(--fonts1);
     font-weight:800;
+}
+
+h2{
+    font-size: var(--fonts1);
+    font-weight:500;
 }
 
 h3{
@@ -49,6 +54,24 @@ a{
 *::placeholder{
     color: var(--purple2);     
 }
+
+ul, ol{
+    text-indent: 0;
+    padding-left: 1em;
+}
+
+.underline{
+    border-bottom: 2px solid var(--yellow1);
+}
+
+li{
+    padding: var(--sp1) 0;
+}
+
+li::marker{
+color:var(--purple2);
+}
+
 
 
 .bold{

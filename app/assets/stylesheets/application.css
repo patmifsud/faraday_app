@@ -11,10 +11,10 @@ body, html{ min-height: 100vh;  background: var(--bgCol2); }
     /* spacers */
     --sp0:3px;
     --sp1:5px;
-    --sp2:10px;
-    --sp3:15px;
-    --sp4:20px;
-    --sp5:25px;
+    --sp2:12px;
+    --sp3:18px;
+    --sp4:25px;
+    --sp5:30px;
     --sp6:35px;
     /* font size */
     --fonts1: 30px;

@@ -5,10 +5,10 @@
 
         <% if @current_user.present? %>
             <div>
-                <%= link_to ("+ &nbsp; Feed".html_safe), new_feed_path, class: "button primary" %>
+                <%= link_to ("New feed".html_safe), new_feed_path, class: "button" %>
                 <%# link_to @current_user.name, session_edit_path, class: "button light" %> 
                 <div class="drop drop--down">
-                    <a class="button bold"><%= @current_user.name + " ▾" %> </a>
+                    <a class="button bold"><%= "#{@current_user.name} &nbsp;▾".html_safe %> </a>
                     <div class="drop__content -transition-slide-in">
                         <div class="drop-list -size-large -position-left  ">
                             <small><%= @current_user.email %> </small>

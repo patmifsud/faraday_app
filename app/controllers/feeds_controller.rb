@@ -6,6 +6,19 @@ class FeedsController < ApplicationController
     @feed = Feed.create feed_params
     @feed.user_id = @current_user.id
     @feed.save
+    # this bit was rushed minutes before submittion
+    p5 = Post_factory.mint_embed_post("https://www.youtube.com/watch?v=uaaC57tcci0", @feed)
+    p4 = Post_factory.mint_embed_post("https://twitter.com/Davesci/status/1315527920685703168", @feed)
+    p3 = Post_factory.mint_text_post(" <h3>Faraday is a little tool to help you: </h3>   
+      <h3>
+          <ul>
+              <li><span class='underline'>Quit a social network</span> while still keeping track of a couple key people, communities or channels</li>
+              <li><span class='underline'>Hijack your habbits</span> - replace your twitter, youtube, reddit or instagram app with a feed of productive or motivational stuff</li>
+              <li><span class='underline'>Spend less time on social media</span> - no algorythyms or endless feeds</li>
+          </ul> 
+      </h3>", @feed)
+    p1 = Post_factory.mint_text_post("<h3>Welcome to your new feed 👋 </h3><br/> <h3>Paste in a link to the box above to get started.</h3>", @feed)
+    
     redirect_to feed_path(@feed.slug)
   end
 

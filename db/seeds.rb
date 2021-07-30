@@ -20,10 +20,10 @@ u4 = User.create :email => 'empty@test.acc', :name => 'Empty', :password => 'chi
 puts "Seeded #{ User.count } users"
 
 # MAKE FEEDS AND POSTS
-f1 = Feed.create :name => 'Photography study'
+f1 = Feed.create :name => 'Photography study for 🚂'
 u1.feeds << f1
-    p1 = Post_factory.mint_embed_post("https://photoshootgoals.com/wp-content/uploads/2020/10/manual-photography-cheat-sheet-photo-shoot-goals.jpg", f1)
-    p3 = Post_factory.mint_embed_post("https://ars.els-cdn.com/content/image/1-s2.0-S0042698999001091-gr1.jpg", f1)
+    p1 = Post_factory.mint_image_post("https://photoshootgoals.com/wp-content/uploads/2020/10/manual-photography-cheat-sheet-photo-shoot-goals.jpg", f1)
+    p3 = Post_factory.mint_image_post("https://ars.els-cdn.com/content/image/1-s2.0-S0042698999001091-gr1.jpg", f1)
     p4 = Post_factory.mint_embed_post("https://twitter.com/digitalps/status/756821215214460928", f1)
     p5 = Post_factory.mint_embed_post("https://twitter.com/rankinphoto/status/1412678973021167617", f1)
     p6 = Post_factory.mint_embed_post("https://twitter.com/FrancescSempere/status/1417230514801414146", f1)
@@ -43,15 +43,11 @@ u1.feeds << f1
     p20 = Post_factory.mint_embed_post("https://www.instagram.com/p/CNu_Aysg9HR/", f1)
     p21 = Post_factory.mint_embed_post("https://www.instagram.com/p/CLP9EMlA2nt/", f1)
     p22 = Post_factory.mint_embed_post("https://www.instagram.com/p/BqdOGs1HP-N/", f1)
-    p23 = Post_factory.mint_embed_post("https://www.tiktok.com/@cendamakeup/video/6976104961683754245?lang=en&is_copy_url=1&is_from_webapp=v1", f1)
-    p24 = Post_factory.mint_embed_post("https://www.tiktok.com/@photography_bts/video/6826216639638342913?lang=en&is_copy_url=1&is_from_webapp=v1", f1)
-    p25 = Post_factory.mint_embed_post("https://www.tiktok.com/@cendamakeup/video/6976104961683754245?lang=en&is_copy_url=1&is_from_webapp=v1", f1)
-    p26 = Post_factory.mint_embed_post("https://www.tiktok.com/@authenticallan/video/6985640330045689094?lang=en&is_copy_url=1&is_from_webapp=v1", f1)
 
 puts "Seeded #{ f1.posts.count } posts in #{ f1.name } feed - #{ f1.user.name }"
 
 
-f2 = Feed.create :name => 'Somewhat cringy motivation feed'
+f2 = Feed.create :name => 'Somewhat cringey motivational feed'
 u2.feeds << f2
     Post_factory.mint_embed_post("https://www.youtube.com/watch?v=C-Cvl3_CH2A", f2)
     Post_factory.mint_embed_post("https://www.youtube.com/watch?v=g3s0--LcgQw", f2)
@@ -86,6 +82,8 @@ u2.feeds << f3
     Post_factory.mint_embed_post("https://cdn.tutsplus.com/net/uploads/legacy/516_code/preview.jpg", f3)
 
 puts "Seeded #{ f3.posts.count } posts in #{ f3.name } feed - #{ f3.user.name }"
+
+
 
 # f4 = Feed.create :name => 'Less toxic Twitter feed'
 # u3.feeds << f4    

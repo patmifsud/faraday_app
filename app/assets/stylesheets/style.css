@@ -19,6 +19,28 @@ logo:hover{
     background: var(--yellow1);
 }
 
+<<<<<<< Updated upstream
+=======
+section.marketing-section{
+  padding: var(--sp8) var(--sp4) var(--sp7) var(--sp4);
+  max-width: 450px;
+}
+
+.desktop-header-image{
+  background-image: url(illustration.png);
+  min-height: 100%;
+  margin-right: -10%;
+  margin-left: var(--sp4);
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.mobile-header-image{
+  display: none;
+  background-image: url("illustration.png");
+}
+>>>>>>> Stashed changes
 
 
 post[type=embed]{}
@@ -230,6 +252,17 @@ mesh{
 }
 
 
+<<<<<<< Updated upstream
+
+=======
+.yellow-background{
+  background: var(--yellow2);
+}
+>>>>>>> Stashed changes
+
+.blue-background{
+  background: var(--blue2);
+}
 
 
 .offset-icons icon{
