@@ -25,7 +25,7 @@ section.site-heading{
 }
 
 .desktop-header-image{
-  background-image: url(illustration.png);
+  background-image: url("illustration.png");
   min-height: 100%;
   margin-right: -10%;
   margin-left: var(--sp4);
@@ -166,6 +166,7 @@ button, input[type=submit], .button{
       padding: var( --sp2) var(--sp6);
       margin: var( --sp3) 0;
     }
+    
 
         .flex-center input, .flex-center .button{
             margin-bottom:0;
