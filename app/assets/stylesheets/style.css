@@ -1,4 +1,65 @@
 
+.flex-row{
+  flex-direction: row;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.gap2 > *:not(:last-child){
+  margin-bottom:var(--sp2);
+  /* gap:var(--sp2); */
+}
+.gap3:not(:last-child) > *:not(:last-child){
+  margin-bottom:var(--sp3);
+  /* gap:var(--sp3); */
+}
+.gap4 > *:not(:last-child){
+  margin-bottom:var(--sp4);
+  /* gap:var(--sp4); */
+}
+.gap5 > *:not(:last-child) {
+margin-bottom:var(--sp5);
+/* gap:var(--sp4); */
+}
+.gap6  > *:not(:last-child){
+margin-bottom:var(--sp6);
+/* gap:var(--sp4); */
+}
+.gap7  > *:not(:last-child){
+  margin-bottom:var(--sp7);
+  /* gap:var(--sp4); */
+  }
+
+.hgap2 > *:not(:last-child){
+  margin-right:var(--sp2);
+  /* gap:var(--sp2); */
+}
+
+.flex-stretch{
+  align-items: stretch;
+}
+
+.yellow-background{
+background: var(--yellow2);
+}
+
+.blue-background{
+background: var(--blue2);
+}
+
+.offset-icons icon{
+  margin-bottom: -5px;
+}
+
+.overflow{
+  overflow:visible;
+}
+
+.no-padding{
+  padding:0;
+}
 
 
 
@@ -12,7 +73,6 @@ logo{
     background: var(--yellow2);
     justify-content: center;
     align-items: center;
-    
 }
 
 logo:hover{
@@ -20,14 +80,19 @@ logo:hover{
 }
 
 section.marketing-section{
-  padding: var(--sp8) var(--sp4) var(--sp7) var(--sp4);
+  padding:var(--sp8) var(--sp5);
   max-width: 450px;
 }
 
+/* since the padding moves to its child we need to make inner section same width 
+as rest of elements + padding of inner element */
+inner.max-width-wider{
+  max-width: calc(1000px + (var(--sp5)*2) );
+}
+
 .desktop-header-image{
-  background-image: url(illustration.png);
+  background-image: url("illustration.png");
   min-height: 100%;
-  margin-right: -10%;
   margin-left: var(--sp4);
   width: 100%;
   background-position: center;
@@ -37,7 +102,13 @@ section.marketing-section{
 .mobile-header-image{
   display: none;
   background-image: url("illustration.png");
+
+  width: 100%;
+  background-size: 40%;
+  height: 150px;
+
 }
+
 
 post[type=embed]{}
 
@@ -116,7 +187,6 @@ background: var(--yellow2);
 
 
 
-
 form{
     display: flex;
     flex-direction: column;
@@ -179,16 +249,6 @@ button, input[type=submit], .button{
         opacity:0.8;
     }
 
-dropdown{
-    /* display: none; */
-    /* position: relative; */
-}
-
-dropdown.open{
-    display: inline;
-}
-
-
 card{
     display: block;
     padding: var(--sp3) var(--sp4);
@@ -200,21 +260,6 @@ card{
 }
 
 
-/* 
-dev{
-    color:white!important; background: hsla(274, 17%, 28%, 1);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-
-dev *{
-    color:white;
-    opacity: 0.8;
-} */
-
-
 /* tools */
 mesh{
     display: flex;
@@ -222,51 +267,18 @@ mesh{
     width: 100%;
 }
 
-.flex-row{
-    flex-direction: row;
-}
-.space-between{
-    justify-content: space-between;
-}
 
-.gap2 > *:not(:first-child){
-    margin-bottom:var(--sp2);
-    /* gap:var(--sp2); */
-}
-.gap3 > *:not(:first-child){
-    margin-bottom:var(--sp3);
-    /* gap:var(--sp3); */
-}
-.gap4 > *:not(:first-child){
-    margin-bottom:var(--sp4);
-    /* gap:var(--sp4); */
-}
-
-.hgap2 > *:not(:last-child){
-    margin-right:var(--sp2);
-    /* gap:var(--sp2); */
-}
-
-.yellow-background{
-  background: var(--yellow2);
-}
-
-.blue-background{
-  background: var(--blue2);
-}
-
-
-.offset-icons icon{
-    margin-bottom: -5px;
-}
-
-.overflow{
-    overflow:visible;
-}
 
 @media only screen and (max-width: 570px) {
     post {
       width: 100%;
+    }
+    div.desktop-header-image{
+      display: none;
+    }
+
+    div.mobile-header-image{
+      display: block;
     }
   }
 

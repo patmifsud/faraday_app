@@ -1,18 +1,23 @@
- <container> <inner>
-<h1><%= @user.name %>'s feeds:</h1>
+<container> 
+    <inner>
+        <h1>
+            <%= @user.name %>'s feeds:
+        </h1>
 
-    <% if @user.feeds.any? %>
-        <% @user.feeds.each do |feed| %>
-            <%= render partial: "ui_components/feed_card", locals: { feed: feed } %>
-        <% end %>   
-    <% else %>
-        <card>
-            <h3> Looks like there are no feeds here yet.... </h3>
-        </card>
-    <% end %>
-    <% if @current_user.present? && @user.id == @current_user.id %>
-        <%= link_to ("Create a new feed".html_safe), new_feed_path, class: "button primary" %>
-    <% end %>
+         <% if @user.feeds.any? %>
+            <% @user.feeds.each do |feed| %>
+                <%= render partial: "ui_components/feed_card", locals: { feed: feed } %>
+            <% end %>   
+        <% else %>
+            <card>
+                <h3> Looks like there are no feeds here yet.... </h3>
+            </card>
+        <% end %>
 
-</inner></container> 
+        <% if @current_user.present? && @user.id == @current_user.id %>
+            <%= link_to ("Create a new feed".html_safe), new_feed_path, class: "button primary" %>
+        <% end %>
+
+    </inner>
+</container> 
 
