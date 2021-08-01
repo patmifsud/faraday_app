@@ -4,7 +4,6 @@ module Post_factory
 
     # Make a new post obj from the url the user entered as :content
     def self.mint_embed_post content, feed
-
         @embed = Embed.new(content)
         # Does noembed know how to embed this url?
         if @embed.success
@@ -27,6 +26,7 @@ module Post_factory
             mint_link_post(content, feed)
         end
     end
+
 
     # If it's just plain text postcontroller will call this method instead
     def self.mint_text_post content, feed
@@ -93,6 +93,11 @@ module Post_factory
         @post.feed_id = feed.id
         @post.save
     end
+
+
+
+
+    
 
     # method to determine if link is an image
     def self.image?(url)

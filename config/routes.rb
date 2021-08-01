@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+ 
   root :to => 'pages#home'
   get 'session/new'
 
@@ -21,4 +22,8 @@ Rails.application.routes.draw do
   resources :users, :only => [:new, :create]
   get '/u/:id' => 'users#view', :as => :user_home
 
+  get 'subscriptions/new', :as => :new_subscription
+  get 'subscriptions/delete'
+  get 'subscriptions/create'
+  get 'subscriptions/destroy'
 end

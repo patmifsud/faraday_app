@@ -33,6 +33,12 @@ module FaradayApp
     # config.assets.initialize_on_precompile = false
     config.generators.system_tests = nil
     config.assets.precompile += %w[ style.css type.css ]
+    
+    # youtube api
+    Yt.configure do |config|
+      config.api_key = 'AIzaSyD5SSMdOyBbCAMkvvKtJ0CToqLoyFsk-6o'
+    end
+
   end
 end
 
