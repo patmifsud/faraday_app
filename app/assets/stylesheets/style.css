@@ -82,7 +82,6 @@ logo:hover{
 section.marketing-section{
   padding:var(--sp8) var(--sp5);
   max-width: 450px;
-}
 
 /* since the padding moves to its child we need to make inner section same width 
 as rest of elements + padding of inner element */
@@ -125,13 +124,10 @@ post[type=embed]{}
         min-height:calc(200px + 8vw);
       }
 
-
     iframe{
         width:100%;
         min-height:calc(200px + 4vw);
-
     }
-
 
 post[type=text] content{
     padding: var(--sp5) var(--sp6) var(--sp6) var(--sp5);
@@ -145,6 +141,7 @@ post[type=text] content{
     background-repeat: no-repeat;
     background-position: right top;
 }
+
 
 post[type=link] content{
     width:100%;
@@ -164,6 +161,7 @@ post[type=link] content{
         margin-bottom:var(--sp2);
     }
 
+
 post[type=image] content{
     background-color:var(--blue2);
     width:100%;
@@ -175,6 +173,8 @@ post[type=image] content{
   img{
     width: 100%;
   }
+
+
 
 small a{
   border-bottom: 2px solid var(--yellow2);
@@ -207,6 +207,8 @@ form{
         color: var(--purple2);
     }
 
+
+
 button, input[type=submit], .button{
     display: inline-block;
     background: var(--bgCol2);
@@ -222,11 +224,18 @@ button, input[type=submit], .button{
         color: var( --blue3);
     }
 
-    form input[type=submit]{
+    form input[type=submit], .button.large, button.large{
         font-size: var( --fonts2);
         padding: var( --sp3) var(--sp6);
         margin: var( --sp3) 0;
     }
+
+    .button.medium, button.medium{
+      font-size: var( --fonts3);
+      padding: var( --sp2) var(--sp6);
+      margin: var( --sp3) 0;
+    }
+    
 
         .flex-center input, .flex-center .button{
             margin-bottom:0;
@@ -259,8 +268,6 @@ card{
     margin: var(--sp3) 0;
 }
 
-
-/* tools */
 mesh{
     display: flex;
     align-items: center;
@@ -285,6 +292,7 @@ mesh{
 
 
 
+/* animations */
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -292,6 +300,26 @@ mesh{
 
 
 
+
+
+
+/* media queries */
+@media only screen and (max-width: 570px) {
+  post {
+    width: 100%;
+  }
+
+  .desktop-header-image{
+    display: none;
+  }
+
+  .mobile-header-image{
+    height: 200px;
+    display: block;
+    background-size: contain;
+    background-color: var(--blue2);
+  }
+}
 
 
 

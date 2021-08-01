@@ -16,8 +16,10 @@ body, html{ min-height: 100vh;  background: var(--bgCol2); }
     --sp4:25px;
     --sp5:30px;
     --sp6:35px;
-    --sp7:60px;
-    --sp8:75px;
+    --sp7:55px;
+    --sp8:70px;
+
+
     /* font size */
     --fonts1: 30px;
     --fonts2: 20px;
