@@ -21,7 +21,9 @@ logo:hover{
 
 section.site-heading{
   padding: var(--sp8) var(--sp4) var(--sp8) var(--sp4);
-  max-width: 450px;
+
+  section.marketing-section{
+  padding: var(--sp8) var(--sp4) var(--sp7) var(--sp4);
 }
 
 .desktop-header-image{
@@ -38,7 +40,6 @@ section.site-heading{
   display: none;
   background-image: url("illustration.png");
 }
-
 
 post[type=embed]{}
 
@@ -252,6 +253,11 @@ mesh{
 .yellow-background{
   background: var(--yellow2);
 }
+
+.blue-background{
+  background: var(--blue2);
+}
+
 
 .offset-icons icon{
     margin-bottom: -5px;

@@ -26,3 +26,52 @@
 
 </container> 
 
+
+ <container class="yellow-background no-padding" title="faraday header"> 
+    <inner>
+        <mesh class="flex-stretch">
+            <section class="marketing-section gap6">
+                <div class="gap3">
+                    <h4>FARADAY TUBE</h4>
+                    <h1>Youtube, Twitter and IG without 
+                        <span style="text-decoration: line-through;">algorithms</span>, 
+                        <span style="text-decoration: line-through;">rabbit holes</span> or 
+                        <span style="text-decoration: line-through;">comments</span>
+                    </h1>
+                </div>
+
+                <% if @current_user.present? %>
+                    <%= link_to "View my feeds", user_home_path(@current_user), class: "button primary medium" %>
+                <% else %>   
+                    <%= link_to "Try it out", new_user_path, class: "button primary medium" %>
+                <% end %>   
+
+            </section>
+            <div class="desktop-header-image"><span></span></div>
+        </mesh>
+        <div class="mobile-header-image"><span></span></div>
+    </inner>
+</container> 
+
+ <container class="blue-background no-padding" style="padding-bottom:var(--sp5);"> 
+    <inner>        
+        <mesh style="flex-wrap: wrap;">
+        <section class="marketing-section gap3" style=" width:100%; max-height:500px; overflow-y:scroll;">
+            <h1>Browse all feeds:</h1>
+            <% @feeds.each do |feed| %>
+                <%= render partial: "ui_components/feed_card", locals: { feed: feed } %>
+            <% end %>
+        </section>
+
+        <section class="marketing-section">
+            <h3>
+                <ul>
+                    <li><span class="underline">Quit a social network</span> while still keeping track of a couple key people, communities or channels</li>
+                    <li><span class="underline">Hijack your habbits</span> - replace your twitter, youtube, reddit or instagram app with a feed of productive or motivational stuff</li>
+                    <li><span class="underline">Spend less time on social media</span> - no algorythyms or endless feeds</li>
+                </ul> 
+            </h3>
+        </section>
+        </mesh>
+    </inner>
+</container> 

@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
     def home
-      @users = User.all
+      @feeds = Feed.all
     end
   end
