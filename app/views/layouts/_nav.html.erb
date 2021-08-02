@@ -1,30 +1,32 @@
 <nav aria-label="main navigation">
-     <container> <inner>
-        <mesh class="space-between overflow">
-        <%= render partial: "layouts/logo" %>
+     <container> 
+        <inner>
+            <mesh class="space-between overflow">
+                <%= render partial: "layouts/logo" %>
 
-        <% if @current_user.present? %>
-            <div>
-                <%= link_to ("New feed".html_safe), new_feed_path, class: "button" %>
-                <%# link_to @current_user.name, session_edit_path, class: "button light" %> 
-                <div class="drop drop--down">
-                    <a class="button bold"><%= "#{@current_user.name} &nbsp;▾".html_safe %> </a>
-                    <div class="drop__content -transition-slide-in">
-                        <div class="drop-list -size-large -position-left  ">
-                            <small><%= @current_user.email %> </small>
-                            <%= link_to "My feeds", "/u/#{@current_user.id}", class: "drop-list__btn" %>
-                            <%= link_to "Logout", login_path, :method => 'delete', class: "drop-list__btn red" %>
+                <% if @current_user.present? %>
+                    <div>
+                        <%= link_to ("New feed".html_safe), new_feed_path, class: "button" %>
+                        <%# link_to @current_user.name, session_edit_path, class: "button light" %> 
+                        <div class="drop drop--down">
+                            <a class="button bold"><%= "#{@current_user.name} &nbsp;▾".html_safe %> </a>
+                            <div class="drop__content -transition-slide-in">
+                                <div class="drop-list -size-large -position-left  ">
+                                    <small><%= @current_user.email %> </small>
+                                    <%= link_to "My feeds", "/u/#{@current_user.id}", class: "drop-list__btn" %>
+                                    <%= link_to "Logout", login_path, :method => 'delete', class: "drop-list__btn red" %>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        <% else %>
-            <div>
-                <%= link_to "Log in", login_path, class: "button" %>
-                <%= link_to 'Sign up', new_user_path, class: "button primary" %>
-            </div>
-        <% end %>
-        </mesh>
-    </inner></container> 
+                <% else %>
+                    <div>
+                        <%= link_to "Log in", login_path, class: "button" %>
+                        <%= link_to 'Sign up', new_user_path, class: "button primary" %>
+                    </div>
+                <% end %>
+            </mesh>
+        </inner>
+    </container> 
 </nav>
 

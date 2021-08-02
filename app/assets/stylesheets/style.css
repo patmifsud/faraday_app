@@ -82,7 +82,7 @@ logo:hover{
 section.marketing-section{
   padding:var(--sp8) var(--sp5);
   max-width: 450px;
-
+}
 /* since the padding moves to its child we need to make inner section same width 
 as rest of elements + padding of inner element */
 inner.max-width-wider{
@@ -300,26 +300,6 @@ mesh{
 
 
 
-
-
-
-/* media queries */
-@media only screen and (max-width: 570px) {
-  post {
-    width: 100%;
-  }
-
-  .desktop-header-image{
-    display: none;
-  }
-
-  .mobile-header-image{
-    height: 200px;
-    display: block;
-    background-size: contain;
-    background-color: var(--blue2);
-  }
-}
 
 
 
