@@ -1,3 +1,6 @@
+<% user = User.find feed.user_id %>
+
 <card title="<%= feed.name %>"> 
     <%= link_to "#{feed.name}", feed_path(feed.slug)%> 
+    <small> by <%= user.name %> </small>
 </card>

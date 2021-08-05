@@ -23,5 +23,19 @@
         <div class="mobile-header-image blue-background"></div>
     </inner>
 </container> 
+<container class="no-padding" > 
+    <inner class="max-width-wider">
+        <section class="marketing-section gap4">
+            <h1>Browse feeds:</h1>
+        
+            <% @feeds.each do |feed| %>
+                <%= render partial: "ui_components/feed_card", locals: { feed: feed } %>
+            <% end %>
 
+            <% if @current_user.present? %>
+                <%= link_to ("Create a new feed".html_safe), new_feed_path, class: "button primary" %>
+            <% end %>
+        </section>
+    </inner>
+</container> 
  

@@ -11,7 +11,7 @@
   margin-bottom:var(--sp2);
   /* gap:var(--sp2); */
 }
-.gap3:not(:last-child) > *:not(:last-child){
+.gap3 > *:not(:last-child){
   margin-bottom:var(--sp3);
   /* gap:var(--sp3); */
 }
