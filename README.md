@@ -1,24 +1,7 @@
-# README
+# Faraday app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails project to build a social network replacement tool.
+Using ogpr and rails YT gems.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Live on heroku:
+https://faraday-app.herokuapp.com
