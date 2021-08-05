@@ -17,7 +17,7 @@ class FeedsController < ApplicationController
               <li><span class='underline'>Spend less time on social media</span> - no algorythyms or endless feeds</li>
           </ul> 
       </h3>", @feed)
-    p1 = Post_factory.mint_text_post("<h3>Welcome to your new feed 👋 </h3><br/> <h3>Paste in a link to the box above to get started.</h3>", @feed)
+    p1 = Post_factory.mint_text_post("<h3>Welcome to your new feed 👋 </h3><br/> <h3>Paste in a link to the box above to get started, e.g. https://youtu.be/jNQXAC9IVRw .</h3>", @feed)
     
     redirect_to feed_path(@feed.slug)
   end

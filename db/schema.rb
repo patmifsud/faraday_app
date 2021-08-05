@@ -35,16 +35,6 @@ ActiveRecord::Schema.define(version: 2021_07_29_130523) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "subscriptions", force: :cascade do |t|
-    t.text "name"
-    t.text "url"
-    t.text "type"
-    t.datetime "last_checked"
-    t.integer "feed_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.text "name"
     t.text "email"

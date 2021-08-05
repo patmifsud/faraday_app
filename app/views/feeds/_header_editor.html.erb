@@ -12,15 +12,6 @@
     </div>
 </mesh>
 
-<mesh>
-    <% if @feed.subscriptions.any? %>
-        <small> ❍)) Subscriptions: </small> 
-    <% else %>
-        <small> ❍)) No subscriptions <%= link_to 'Add subscription', new_subscription_path(@feed) %></small>
-    <%end%>
-
-</mesh>
-
 <%= form_for Post.new do |f| %>
     <mesh title="New post box" class="flex-center hgap2">
         <%= f.text_field :content, placeholder: "Paste a link to add to your feed" %>
